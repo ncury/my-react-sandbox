@@ -2,12 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import GithubCard from './github-card/GithubCard'
 import * as serviceWorker from './serviceWorker';
+import { Link, BrowserRouter, Switch, Route } from 'react-router-dom';
+
+const routes = (
+  <BrowserRouter>  
+    <div className="headerMenu">
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/githubcard">GithubCard</Link>
+        </li>
+      </ul>
+      <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/githubcard" component={GithubCard} />
+      </Switch>
+    </div>
+  </BrowserRouter>
+);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  routes,
   document.getElementById('root')
 );
 
