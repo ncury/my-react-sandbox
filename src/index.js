@@ -17,10 +17,12 @@ const routes = (
           <Link to="/githubcard">GithubCard</Link>
         </li>
       </ul>
-      <Switch>
+    </div>
+    <div>
+    <Switch>
           <Route exact path="/" component={App} />
           <Route path="/githubcard" component={GithubCard} />
-      </Switch>
+    </Switch>
     </div>
   </BrowserRouter>
 );
